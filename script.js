@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const loginForm = document.getElementById('loginForm');
 
-    // DEFININDO AS CREDENCIAIS PADRÃO (HARDCODED)
-    // Você pode alterar esses valores para o que quiser
+    // CREDENCIAIS
     const emailAdmin = "admin@stark.com";
     const senhaMestra = "membros2026"; 
 
@@ -14,15 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const senhaDigitada = document.getElementById('password').value;
 
         // LÓGICA DE VERIFICAÇÃO
-        // Verifica se o E-mail E (&&) a Senha batem com o padrão
         if(emailDigitado === emailAdmin && senhaDigitada === senhaMestra) {
             
             // Sucesso
             console.log("Login Aprovado");
-            alert("ACESSO PERMITIDO! Bem-vindo à área de membros.");
             
-            // Aqui seria o redirecionamento:
-            // window.location.href = "dashboard.html";
+            // Opcional: Você pode remover o alert abaixo se quiser que entre direto sem avisar
+            alert("ACESSO PERMITIDO! Redirecionando...");
+            
+            // --- AQUI ESTÁ A MUDANÇA ---
+            // O comando abaixo diz ao navegador: "Vá para a página dashboard.html"
+            window.location.href = "dashboard.html";
 
         } else {
             
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Login Recusado");
             alert("ACESSO NEGADO: E-mail ou senha incorretos.");
             
-            // Limpa o campo de senha para a pessoa tentar de novo
+            // Limpa o campo de senha
             document.getElementById('password').value = "";
         }
     });

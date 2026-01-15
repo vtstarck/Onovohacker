@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Stark System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>STARK<span>.IO</span></h2>
+            </div>
+            
+            <nav>
+                <a href="#" class="active"><i class="material-icons">dashboard</i> Visão Geral</a>
+                <a href="#"><i class="material-icons">attach_money</i> Investimentos</a>
+                <a href="#"><i class="material-icons">style</i> Marca KULT</a>
+                <a href="#"><i class="material-icons">library_books</i> Meus Livros</a>
+                <a href="#"><i class="material-icons">settings</i> Configurações</a>
+            </nav>
+
+            <div class="logout-section">
+                <a href="#" onclick="logout()"><i class="material-icons">logout</i> Sair</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <header>
+                <h3>Painel de Controle</h3>
+                <div class="user-info">
+                    <span>Victor Stark</span>
+                    <div class="avatar">VS</div>
+                </div>
+            </header>
+
+            <div class="cards-grid">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Saldo Estimado</h4>
+                        <i class="material-icons icon-blue">account_balance_wallet</i>
+                    </div>
+                    <div class="card-value">R$ 12.450,00</div>
+                    <p class="card-desc">+15% esse mês</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Vendas KULT</h4>
+                        <i class="material-icons icon-purple">shopping_bag</i>
+                    </div>
+                    <div class="card-value">24 Pedidos</div>
+                    <p class="card-desc">Aguardando envio</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Escrita</h4>
+                        <i class="material-icons icon-green">edit_note</i>
+                    </div>
+                    <div class="card-value">Capítulo 3</div>
+                    <p class="card-desc">Livro: O Poder do Ainda</p>
+                </div>
+
+            </div>
+
+            <div class="recent-activity">
+                <h4>Atividades Recentes</h4>
+                <div class="activity-item">
+                    <span>Compra de Ações (WEGE3)</span>
+                    <span class="date">Hoje, 10:30</span>
+                </div>
+                <div class="activity-item">
+                    <span>Atualização do Site Portfólio</span>
+                    <span class="date">Ontem, 22:15</span>
+                </div>
+                <div class="activity-item">
+                    <span>Novo esboço de design KULT</span>
+                    <span class="date">12 Jan, 14:00</span>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function logout() {
+            // Redireciona de volta para o login
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
