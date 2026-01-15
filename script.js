@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const loginForm = document.getElementById('loginForm');
 
-    // CREDENCIAIS
+    // CREDENCIAIS (Aqui você define a senha)
     const emailAdmin = "admin@stark.com";
     const senhaMestra = "membros2026"; 
 
@@ -15,23 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // LÓGICA DE VERIFICAÇÃO
         if(emailDigitado === emailAdmin && senhaDigitada === senhaMestra) {
             
-            // Sucesso
             console.log("Login Aprovado");
             
-            // Opcional: Você pode remover o alert abaixo se quiser que entre direto sem avisar
-            alert("ACESSO PERMITIDO! Redirecionando...");
-            
-            // --- AQUI ESTÁ A MUDANÇA ---
-            // O comando abaixo diz ao navegador: "Vá para a página dashboard.html"
-            window.location.href = "dashboard.html";
+            // --- O PULO DO GATO ---
+            // Essa linha manda o usuário para o arquivo que você colou na pergunta
+            window.location.href = "dashboard.html"; 
 
         } else {
-            
-            // Erro
+            // Se errar a senha
             console.log("Login Recusado");
             alert("ACESSO NEGADO: E-mail ou senha incorretos.");
-            
-            // Limpa o campo de senha
             document.getElementById('password').value = "";
         }
     });
