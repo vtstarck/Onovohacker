@@ -1,25 +1,37 @@
-// Aguarda o carregamento completo do DOM (opcional, mas boa prática)
 document.addEventListener('DOMContentLoaded', () => {
     
     const loginForm = document.getElementById('loginForm');
 
+    // DEFININDO AS CREDENCIAIS PADRÃO (HARDCODED)
+    // Você pode alterar esses valores para o que quiser
+    const emailAdmin = "admin@stark.com";
+    const senhaMestra = "membros2026"; 
+
     loginForm.addEventListener('submit', function(e) {
         e.preventDefault(); // Impede a página de recarregar
         
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+        const emailDigitado = document.getElementById('email').value;
+        const senhaDigitada = document.getElementById('password').value;
 
-        // Simulação de verificação
-        if(email && password) {
-            console.log("Tentativa de login efetuada.");
+        // LÓGICA DE VERIFICAÇÃO
+        // Verifica se o E-mail E (&&) a Senha batem com o padrão
+        if(emailDigitado === emailAdmin && senhaDigitada === senhaMestra) {
             
-            // Aqui você conectaria com o banco de dados futuramente
-            alert(`Tentativa de login com:\nUsuário: ${email}\n(Sistema Backend não conectado)`);
+            // Sucesso
+            console.log("Login Aprovado");
+            alert("ACESSO PERMITIDO! Bem-vindo à área de membros.");
             
-            // Exemplo de como seria o redirecionamento real:
-            // window.location.href = "/dashboard";
+            // Aqui seria o redirecionamento:
+            // window.location.href = "dashboard.html";
+
         } else {
-            alert("Por favor, preencha todos os campos.");
+            
+            // Erro
+            console.log("Login Recusado");
+            alert("ACESSO NEGADO: E-mail ou senha incorretos.");
+            
+            // Limpa o campo de senha para a pessoa tentar de novo
+            document.getElementById('password').value = "";
         }
     });
 
